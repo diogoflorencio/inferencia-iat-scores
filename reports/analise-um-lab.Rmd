@@ -5,7 +5,7 @@ output:
     df_print: paged
 theme: sandstone
 params: 
-    arquivo_dados: "data/sdsu .csv"
+    arquivo_dados: "data/pi .csv"
 ---
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
@@ -144,9 +144,17 @@ grid.arrange(p1, p2, ncol = 2)
 
 ```
 
+```{r}
+parameters <- iat %>% 
+    group_by(sex) %>% 
+    summarise(N = n(), sd = sd(d_art))
+
+parameters
+```
+
 ### Conclusão
 
-Em média, as mulheres que participaram do experimento tiveram uma associação implícita (medida pelo IAT) com a matemárica **positiva/negativa** e **fraca/média/forte** (média XXX, desv. padrão YYY, N = ZZZ). Homens tiveram uma associação **positiva/negativa** com a matemática, portanto **maior/menor** que a das mulheres (média , desv. padrão, N = ). Houve portanto uma **grande/considerável/pequena** diferença entre homens e mulheres (diferença das médias XXXX, 95% CI [CCC, DDD]). A partir desta amostra, estimamos que...
+Em média, as mulheres que participaram do experimento tiveram uma associação implícita (medida pelo IAT) com a matemárica **negativa** e **forte** (média 0.6, desv. padrão =  0.4392966, N = 809). Homens tiveram uma associação **negativa** com a matemática, portanto **menor** que a das mulheres (média = 0.32 , desv. padrão = 0.4987806, N = 427). Houve portanto uma **grande** diferença entre homens e mulheres (diferença das médias -0.2911497, 95% CI [-0.347296, 0.2357524]). A partir desta amostra, estimamos que mulheres tem uma aversão a matemática significamente maior do que homens.
 
 --- 
 *Exemplos de possíveis conclusões para completar*
